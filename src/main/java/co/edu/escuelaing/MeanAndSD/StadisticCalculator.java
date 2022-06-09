@@ -22,12 +22,27 @@ public class StadisticCalculator {
         return result;
     }
     
+    public static double standardDesviation(List<? extends Double> li){
+        double m = mean(li);
+        double result = 0;
+        double delta;
+        for(Double i:li){
+            delta = Math.pow((i-m), 2);
+            result += delta;
+        }
+        result /= (li.size() -1);
+        result = Math.sqrt(result);
+        return result;
+    }
+    
     public static void main ( String args[])
     {
-        List<Integer> li = new LinkedList<Integer>();
-        li.add(0);
-        li.add(10);
+        List<Double> li = new LinkedList<Double>();
+        li.add(0.0);
+        li.add(10.0);
+        li.add(3.5);
         System.out.println(mean(li));
+        System.out.println(standardDesviation(li));
     }
     
 }
