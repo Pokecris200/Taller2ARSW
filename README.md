@@ -18,9 +18,13 @@ Así se tiene que el diseño queda tal que así
 ![Diagrama de Paquetes](img/paquetes.png)
 
 * Paquete LinkedList
+
+
 ![Paquete LL](img/clasesllist.png)
 
 * Paquete MeanAndSD
+
+
 ![Paquete Calc](img/clasesStadistic.png)
 
 ## Autor
