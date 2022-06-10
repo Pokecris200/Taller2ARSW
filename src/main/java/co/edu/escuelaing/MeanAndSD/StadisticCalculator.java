@@ -13,6 +13,11 @@ import java.util.List;
  */
 public class StadisticCalculator {
     
+    /**
+     * Method that calculates the mean of a set of values
+     * @param li a list with the values 
+     * @return the mean of the values
+     */
     public static double mean(List<? extends Double> li){
         double result = 0;
         for(Double i:li){
@@ -22,6 +27,11 @@ public class StadisticCalculator {
         return result;
     }
     
+    /**
+     * Method that calculates the Standard Desviation of a set of values
+     * @param li li a list with the values
+     * @return the Standard Desviation of the values
+     */
     public static double standardDesviation(List<? extends Double> li){
         double m = mean(li);
         double result = 0;
