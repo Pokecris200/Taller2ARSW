@@ -4,7 +4,7 @@
  */
 package co.edu.escuelaing.MeanAndSD;
 
-import java.util.LinkedList;
+import co.edu.escuelaing.LinkedList.MyLList;
 import java.util.List;
 
 /**
@@ -47,7 +47,7 @@ public class StadisticCalculator {
     
     public static void main ( String args[])
     {
-        List<Double> li = new LinkedList<Double>();
+        List<Double> li = new MyLList<Double>();
         li.add(0.0);
         li.add(10.0);
         li.add(3.5);
