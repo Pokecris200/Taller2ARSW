@@ -19,28 +19,59 @@ import java.util.Queue;
  */
 public class MyLList extends AbstractSequentialList implements Serializable, Cloneable, Iterable, Collection, Deque, List, Queue {
 
-    @Override
-    public ListIterator listIterator(int index) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    //Atributos
+    private Node ini;
+    private Node fin;
+    private int size;
+    
+    //Metodos implementados
     @Override
     public Iterator iterator(){
-        return null;
+        return new Iterator(){
+            private int currentIndex = 0;
+            private Node current = ini;
+            @Override
+            public boolean hasNext() {
+                return currentIndex < (size-1);
+            }
+
+            @Override
+            public Object next() {
+                
+                if(currentIndex > 0 && hasNext()){
+                    current  = current.getNext();
+                    currentIndex++;
+                }
+                return current;
+            }
+            
+        };
     } 
     
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return size;
     }
-
+    
     @Override
     public void addFirst(Object e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Node temp = new Node(e);
+        temp.setNext(ini);
+        ini = temp;
+        size++;
     }
 
     @Override
     public void addLast(Object e) {
+        fin.setNext(new Node(e));
+        fin = fin.getNext();
+        size++;
+    }
+    
+    //Metodos no implementados
+    
+    @Override
+    public ListIterator listIterator(int index) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
